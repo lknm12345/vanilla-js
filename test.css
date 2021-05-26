@@ -1,0 +1,397 @@
+.wrap {
+  margin: auto;
+  width: 480px;
+  border: 1px solid black;
+}
+
+/* .mainContainer {
+  border: 1px solid red;
+} */
+
+.mainNav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  padding: 0 10px;
+  height: 40px;
+  background: black;
+}
+
+.fa-chevron-left {
+  font-size: 25px;
+  color: white;
+}
+
+.flag {
+  position: absolute;
+  left: 50px;
+}
+
+.rec {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 60px;
+  background: red;
+}
+
+.flagText {
+  margin-top: 30px;
+  color: white;
+}
+
+.tri {
+  border-color: red red transparent red;
+  border-style: solid;
+  border-width: 0 20px 10px 20px;
+}
+
+.fa-ellipsis-v {
+  font-size: 25px;
+  color: white;
+}
+
+.mainText {
+  background: burlywood;
+  padding: 10px;
+}
+
+.userInfo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 30px;
+}
+
+.infoLeft {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 110px;
+}
+
+.userImg {
+  width: 25px;
+  height: 25px;
+  background: gray;
+  border-radius: 50%;
+}
+
+.userSNS {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 18px;
+  height: 18px;
+  background: gray;
+  border-radius: 50%;
+  color: white;
+  font-size: 10px;
+}
+
+.goToUser {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-left: 1px;
+  width: 10px;
+  height: 10px;
+  border: 1px solid gray;
+  border-radius: 50%;
+}
+
+.fa-chevron-right {
+  font-size: 8px;
+}
+
+.mainOption {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+  height: 30px;
+  background: black;
+}
+
+.optionLeft {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.optionRight {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100px;
+}
+
+.chatBtn,
+.likeBtn,
+.hateBtn,
+.shareBtn {
+  background: none;
+  color: white;
+  font-size: 15px;
+}
+
+.chatBtn,
+.likeBtn,
+.hateBtn,
+.shareBtn :hover {
+  cursor: pointer;
+}
+
+.commentContainer {
+  padding: 10px;
+  background: burlywood;
+}
+
+/* .commentBox {
+  border: 1px solid red;
+} */
+
+.commentUserInfo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.commentInfoLeft {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 125px;
+}
+
+.commentUserImg {
+  width: 20px;
+  height: 20px;
+  background: gray;
+  border-radius: 50%;
+}
+
+.commentUserSNS {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 15px;
+  height: 15px;
+  background: gray;
+  border-radius: 50%;
+  color: white;
+  font-size: 8px;
+}
+
+.commentUserId {
+  font-size: 10px;
+}
+
+.commentGoToUser {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-left: 1px;
+  width: 10px;
+  height: 10px;
+  border: 1px solid gray;
+  border-radius: 50%;
+}
+
+.commentTime {
+  padding-left: 5px;
+  font-size: 10px;
+}
+
+.commentInfoRight {
+  display: flex;
+  align-items: center;
+}
+
+.commentText {
+  padding-left: 20px;
+}
+
+.commentOption {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-left: 20px;
+}
+
+.commentChatBtn,
+.commentLikeBtn,
+.commentHateBtn,
+.commentShareBtn {
+  width: 40px;
+  background: none;
+  border: 1px solid gray;
+  border-radius: 10px;
+}
+
+.commentChatBtn,
+.commentLikeBtn,
+.commentHateBtn,
+.commentShareBtn:hover {
+  cursor: pointer;
+}
+
+.commentLikeBtn,
+.commentHateBtn,
+.commentShareBtn:last-child {
+  margin-left: 5px;
+}
+
+#addComment {
+  padding: 10px;
+  background: burlywood;
+  border-top: 3px solid gray;
+}
+
+.inputTitle {
+  margin-bottom: 10px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.inputBox {
+  display: flex;
+  align-items: center;
+}
+
+.uploadBtn {
+  margin-left: 10px;
+  width: 70px;
+  height: 30px;
+  background: red;
+  border-radius: 3px;
+  color: white;
+}
+
+.modalBg {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  visibility: hidden;
+}
+
+.modalBgActive {
+  visibility: visible;
+}
+
+.modal {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 480px;
+  background: white;
+  color: black;
+}
+
+.modalActive {
+  display: none;
+}
+
+.modalTitle {
+  font-size: 20px;
+}
+
+.facebookBtn {
+  display: flex;
+  align-items: center;
+  width: 200px;
+  height: 30px;
+  background-color: #3b589e;
+  border-radius: 25px;
+  color: white;
+}
+
+.snsFont {
+  margin: 0 30px 0 20px;
+}
+
+.modal2 {
+  display: none;
+}
+
+.modal2Active {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-top: 20px;
+  width: 480px;
+  background: white;
+  border-radius: 25px 25px 0 0;
+  color: black;
+}
+
+.modal2Container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 460px;
+}
+
+.modal2UserInfo {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  width: 460px;
+}
+
+.modal2UserImg {
+  margin-right: 5px;
+  width: 30px;
+  height: 30px;
+  background: gray;
+  border-radius: 50%;
+}
+
+.modal2UserSNS {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 5px;
+  width: 15px;
+  height: 15px;
+  background-color: #3b589e;
+  border-radius: 50%;
+  font-size: 10px;
+  color: white;
+}
+
+.modal2Option {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 10px 0;
+  width: 460px;
+}
+
+.modal2OptionLeft {
+  font-size: 20px;
+}
+
+.fa-image {
+  margin-right: 10px;
+}
+
+.uploadCommentBtn {
+  border: 1px solid red;
+  width: 480px;
+  height: 40px;
+  background: red;
+  color: white;
+  font-size: 20px;
+}
