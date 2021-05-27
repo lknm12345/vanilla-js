@@ -1,7 +1,6 @@
 const chatInput = document.querySelector(".modal2Input");
 const chatBtn = document.querySelector(".uploadCommentBtn");
 const chatContainer = document.querySelector(".commentContainer");
-const chatBox = document.querySelector(".commentBox");
 
 const today = new Date();
 const year = today.getFullYear();
@@ -10,6 +9,7 @@ const date = today.getDate();
 const hour = today.getHours();
 const minute = today.getMinutes();
 const second = today.getSeconds();
+const timeValue = year + "." + month + "." + date + "." + hour + ":" + minute;
 
 //금지어
 const BANWORD = ["사랑", "합격"];
@@ -20,8 +20,8 @@ let oneUserOneChat = 0;
 //삭제 함수
 const handleDeleteChatList = (e) => {
   const item = e.target;
-  if (item.classList[0] === "svg-inline--fa") {
-    const list = item.parentElement.parentElement.parentElement;
+  const list = item.parentElement.parentElement;
+  if (list.classList[0] === "commentBox") {
     list.remove();
     oneUserOneChat--;
   }
@@ -33,7 +33,7 @@ const findBanWord = () => {
   for (let i = 0; i < BANWORD.length; i++) {
     const find = BANWORD[i];
     if (inputValue.indexOf(find) >= 0) {
-      return alert("금지어가 있습니다");
+      return [alert("금지어가 있습니다"), (chatInput.value = "")];
     }
   }
   if (true) {
@@ -43,7 +43,6 @@ const findBanWord = () => {
 
 //댓글 추가 함수
 const addChat = () => {
-  const timeValue = year + "." + month + "." + date + "." + hour + ":" + minute;
   const inputValue = chatInput.value;
 
   if (inputValue === "") {
@@ -64,14 +63,14 @@ const addChat = () => {
     <div class="commentTime">${timeValue}</div>
   </div>
   <div class="commentInfoRight">
-    <i class="fas fa-ellipsis-h"></i>
+    삭제
   </div>
 </div>
 <div class="commentText"><span id="spanspan">${inputValue}</span></div>
 <div class="commentOption">
   <div class="commentOptionLeft">		
     <button class="commentChatBtn">		
-      <i class="far fa-comment"></i>&nbsp;0
+      수정
     </button>
   </div>
   <div class="commentOptionRight">
@@ -102,26 +101,40 @@ const addChat = () => {
       alert("자신의 싫어요 버튼은 누를 수 없습니다.");
     });
 
-    //삭제 실행
-    const deleteChatList = chatDiv.querySelector(".commentInfoRight");
-    deleteChatList.addEventListener("click", (e) => handleDeleteChatList(e));
-
     //댓글 수정 함수
     const rewriteChat = () => {
       const newWrite = prompt("수정하시오");
       const currentValue = chatDiv.querySelector("#spanspan");
-      currentValue.innerHTML = newWrite;
+
+      if (newWrite === "") {
+        return alert("수정 내용이 없습니다.");
+      }
+
+      for (let i = 0; i < BANWORD.length; i++) {
+        const find = BANWORD[i];
+        if (newWrite.indexOf(find) >= 0) {
+          return alert("금지어가 있습니다");
+        }
+      }
+      if (true) {
+        currentValue.innerHTML = newWrite;
+      }
     };
 
     //수정 실행
     const rewriteChatBtn = chatDiv.querySelector(".commentChatBtn");
     rewriteChatBtn.addEventListener("click", () => rewriteChat());
+
+    //삭제 실행
+    const deleteChatList = chatDiv.querySelector(".commentInfoRight");
+    deleteChatList.addEventListener("click", (e) => handleDeleteChatList(e));
   } else if (oneUserOneChat === 1) {
     alert("도배 방지"); //도배방지
+    chatInput.value = "";
   }
 };
 
-//댓글 추가 실행
+//실행 함수
 const handleChatBtn = () => {
   chatBtn.addEventListener("click", () => findBanWord());
 };
