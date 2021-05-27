@@ -34,14 +34,17 @@
 						<i class="fas fa-chevron-right"></i>
 					</div>
 				</div>
-				<div class="infoRight">Time</div>
+				<div class="infoRight">2020.01.09.17:22</div>
 			</div>
-			<div class="userText">show text here</div>
+			<div class="userText">최근까지 React만 사용하다가 다시 vanilla Js를 하려니까 막막했다.
+				근데 하다보니까 생각보다 재밌었다. 여태까지 React에만 신경을 쓰고 있었기 때문에 확실히 기본 Js에 부족함을 많이 느꼈다.
+				취직 준비를 하면서 Js에 기본 개념을 다시 공부하다가 다시 Js를 쓰게 되어서 좋은 시간이라고 생각한다.
+			</div>
 		</div>
 		<div class="mainOption">
 			<div class="optionLeft">		
 				<button class="chatBtn">		
-					<i class="far fa-comment"></i>&nbsp;0
+					<i class="far fa-comment"></i>&nbsp;1
 				</button>
 			</div>
 			<div class="optionRight">
@@ -70,7 +73,7 @@
 					<div class="commentGoToUser">
 						<i class="fas fa-chevron-right"></i>
 					</div>
-					<div class="commentTime">Time</div>
+					<div class="commentTime">2020.02.22.22:22</div>
 				</div>
 				<div class="commentInfoRight">
 					<i class="fas fa-ellipsis-h"></i>
@@ -85,10 +88,12 @@
 				</div>
 				<div class="commentOptionRight">
 					<button class="commentLikeBtn">
-						<i class="far fa-thumbs-up"></i>&nbsp;0
+						<i class="far fa-thumbs-up"></i>&nbsp;
+						<span id='likeCount'>0</span>
 					</button>
 					<button class="commentHateBtn">
-						<i class="far fa-thumbs-down"></i>&nbsp;0
+						<i class="far fa-thumbs-down"></i>&nbsp;
+						<span id='hateCount'>0</span>
 					</button>
 					<button class="commentShareBtn">
 						<i class="fas fa-share"></i>&nbsp;0
@@ -123,7 +128,7 @@
 					</div>
 					<div class="modal2UserId">USER ID</div>
 				</div>
-				<input type="text" placeholder="댓글 작성 시 상대방에 대한 배려와 책임을 담아주세요." /> 
+				<input type="text" class="modal2Input" placeholder="댓글 작성 시 상대방에 대한 배려와 책임을 담아주세요." /> 
 				<div class="modal2Option">
 					<div class="modal2OptionLeft">
 						<i class="far fa-image"></i>
@@ -141,8 +146,9 @@
 	</div>
 
 </div>	
-	
+
 <script src="modal.js"></script>
-<script src="test.js"></script>
+<script src="comment.js"></script>
+<script src="likeBtn.js"></script>
 </body>
 </html>

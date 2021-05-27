@@ -54,8 +54,9 @@
 }
 
 .mainText {
-  background: burlywood;
-  padding: 10px;
+  padding: 10px 10px 20px 10px;
+  background-color: rgba(0, 0, 0, 0.6);
+  color: white;
 }
 
 .userInfo {
@@ -85,7 +86,7 @@
   align-items: center;
   width: 18px;
   height: 18px;
-  background: gray;
+  background: #3b589e;
   border-radius: 50%;
   color: white;
   font-size: 10px;
@@ -146,12 +147,11 @@
 
 .commentContainer {
   padding: 10px;
-  background: burlywood;
 }
 
-/* .commentBox {
-  border: 1px solid red;
-} */
+.commentBox {
+  margin-bottom: 20px;
+}
 
 .commentUserInfo {
   display: flex;
@@ -163,7 +163,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 125px;
+  width: 180px;
 }
 
 .commentUserImg {
@@ -179,7 +179,7 @@
   align-items: center;
   width: 15px;
   height: 15px;
-  background: gray;
+  background: #3b589e;
   border-radius: 50%;
   color: white;
   font-size: 8px;
@@ -207,11 +207,20 @@
 
 .commentInfoRight {
   display: flex;
+  justify-content: center;
   align-items: center;
+  width: 40px;
+  height: 20px;
+}
+
+.commentInfoRight:hover {
+  background: rgba(0, 0, 0, 0.6);
+  border-radius: 25px;
+  color: white;
 }
 
 .commentText {
-  padding-left: 20px;
+  padding: 0 0 10px 20px;
 }
 
 .commentOption {
@@ -234,19 +243,31 @@
 .commentChatBtn,
 .commentLikeBtn,
 .commentHateBtn,
-.commentShareBtn:hover {
+.commentShareBtn,
+.commentHateBtnActive,
+.commentLikeBtnActive:hover {
   cursor: pointer;
 }
 
 .commentLikeBtn,
 .commentHateBtn,
-.commentShareBtn:last-child {
+.commentShareBtn,
+.commentHateBtnActive,
+.commentLikeBtnActive {
   margin-left: 5px;
+}
+
+.commentHateBtnActive,
+.commentLikeBtnActive {
+  width: 40px;
+  background: pink;
+  border: 1px solid pink;
+  border-radius: 10px;
+  color: white;
 }
 
 #addComment {
   padding: 10px;
-  background: burlywood;
   border-top: 3px solid gray;
 }
 
