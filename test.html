@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>vanilla js</title>
+	<link rel="stylesheet" href="test.css">
+	<link rel="stylesheet" href="reset.css">
+	<script src="https://use.fontawesome.com/releases/v5.2.0/js/all.js"></script>	
+</head>
+<body>
+<div class="wrap">	
+	<div class="mainContainer">
+		<div class="mainNav">
+			<i class="fas fa-chevron-left"></i>
+			<div class="flag">
+				<div class="rec">
+					<p class="flagText">Best</p>
+				</div>
+				<div class="tri"></div>
+			</div>
+			<i class="fas fa-ellipsis-v"></i>
+		</div>
+		<div class="mainText">
+			<div class="userInfo">
+				<div class="infoLeft">
+					<div class="userImg"></div>
+					<div class="userSNS">
+						<i class="fab fa-facebook-f"></i>
+					</div>
+					<div class="userId">USER ID</div>
+					<div class="goToUser">
+						<i class="fas fa-chevron-right"></i>
+					</div>
+				</div>
+				<div class="infoRight">2020.01.09.17:22</div>
+			</div>
+			<div class="userText">최근까지 React만 사용하다가 다시 vanilla Js를 하려니까 막막했다.
+				근데 하다보니까 생각보다 재밌었다. 여태까지 React에만 신경을 쓰고 있었기 때문에 확실히 기본 Js에 부족함을 많이 느꼈다.
+				취직 준비를 하면서 Js에 기본 개념을 다시 공부하다가 다시 Js를 쓰게 되어서 좋은 시간이라고 생각한다.
+			</div>
+		</div>
+		<div class="mainOption">
+			<div class="optionLeft">		
+				<button class="chatBtn">		
+					<i class="far fa-comment"></i>&nbsp;1
+				</button>
+			</div>
+			<div class="optionRight">
+				<button class="likeBtn">
+					<i class="far fa-thumbs-up"></i>&nbsp;0
+				</button>
+				<button class="hateBtn">
+					<i class="far fa-thumbs-down"></i>&nbsp;0
+				</button>
+				<button class="shareBtn">
+					<i class="fas fa-share"></i>&nbsp;0
+				</button>
+			</div>
+		</div>
+	</div>
+
+	<div class="commentContainer">
+		<div class="commentBox">
+			<div class="commentUserInfo">
+				<div class="commentInfoLeft">
+					<div class="commentUserImg"></div>
+					<div class="commentUserSNS">
+						<i class="fab fa-facebook-f"></i>
+					</div>
+					<div class="commentUserId">USER ID</div>
+					<div class="commentGoToUser">
+						<i class="fas fa-chevron-right"></i>
+					</div>
+					<div class="commentTime">2020.02.22.22:22</div>
+				</div>
+				<div class="commentInfoRight">
+					<i class="fas fa-ellipsis-h"></i>
+				</div>
+			</div>
+			<div class="commentText">show comment text here</div>
+			<div class="commentOption">
+				<div class="commentOptionLeft">		
+					<button class="commentChatBtn">		
+						<i class="far fa-comment"></i>&nbsp;0
+					</button>
+				</div>
+				<div class="commentOptionRight">
+					<button class="commentLikeBtn">
+						<i class="far fa-thumbs-up"></i>&nbsp;
+						<span id='likeCount'>0</span>
+					</button>
+					<button class="commentHateBtn">
+						<i class="far fa-thumbs-down"></i>&nbsp;
+						<span id='hateCount'>0</span>
+					</button>
+					<button class="commentShareBtn">
+						<i class="fas fa-share"></i>&nbsp;0
+					</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div id="addComment" >
+		<div class="inputTitle">나도 한마디!</div>
+		<div class="inputBox">
+			<input type="text" class="myComment" placeholder="댓글을 입력해 주세요." />
+			<button class="uploadBtn">등록</button>
+		</div>
+	</div>
+
+	<div class="modalBg">
+		<div class="modal">
+			<p class="modalTitle">SNS 로그인해서 댓글 쓰기</p>
+			<button class="facebookBtn">
+				<i class="fab fa-facebook-f snsFont"></i>
+				페이스북으로 로그인
+			</button>
+		</div>
+		<div class="modal2">
+			<div class="modal2Container">
+				<div class="modal2UserInfo">
+					<div class="modal2UserImg"></div>
+					<div class="modal2UserSNS">
+						<i class="fab fa-facebook-f modalSNS"></i>
+					</div>
+					<div class="modal2UserId">USER ID</div>
+				</div>
+				<input type="text" class="modal2Input" placeholder="댓글 작성 시 상대방에 대한 배려와 책임을 담아주세요." /> 
+				<div class="modal2Option">
+					<div class="modal2OptionLeft">
+						<i class="far fa-image"></i>
+						<i class="far fa-smile"></i>
+					</div>
+					<div class="modal2OptionRight">
+						자동공유
+					</div>
+				</div>
+			</div>
+			<button class="uploadCommentBtn">
+				댓글등록
+			</button>
+		</div>
+	</div>
+
+</div>	
+
+<script src="modal.js"></script>
+<script src="comment.js"></script>
+<script src="likeBtn.js"></script>
+</body>
+</html>
