@@ -6,38 +6,60 @@ let hateCount = document.querySelector("#hateCount");
 let handleLikeBtn = false;
 let handleHateBtn = false;
 
-//댓글 좋아요 싫어요 버튼
+//기존 댓글 좋아요 싫어요 버튼
 const changeLikeValue = () => {
-  if (!handleLikeBtn) {
+  if (handleHateBtn) {
     handleLikeBtn = true;
     likeCount.textContent++;
     likeBtn.classList.add("commentLikeBtnActive");
     likeBtn.classList.remove("commentLikeBtn");
-  } else {
-    handleLikeBtn = false;
-    likeCount.textContent--;
-    likeBtn.classList.add("commentLikeBtn");
-    likeBtn.classList.remove("commentLikeBtnActive");
-  }
-};
 
-const changeHateValue = () => {
-  if (!handleHateBtn) {
-    handleHateBtn = true;
-    hateCount.textContent++;
-    hateBtn.classList.add("commentHateBtnActive");
-    hateBtn.classList.remove("commentHateBtn");
-  } else {
     handleHateBtn = false;
     hateCount.textContent--;
     hateBtn.classList.add("commentHateBtn");
     hateBtn.classList.remove("commentHateBtnActive");
+  } else if (handleLikeBtn) {
+    handleLikeBtn = false;
+    likeCount.textContent--;
+    likeBtn.classList.add("commentLikeBtn");
+    likeBtn.classList.remove("commentLikeBtnActive");
+  } else if (!handleLikeBtn) {
+    handleLikeBtn = true;
+    likeCount.textContent++;
+    likeBtn.classList.add("commentLikeBtnActive");
+    likeBtn.classList.remove("commentLikeBtn");
+  }
+};
+
+const changeHateValue = () => {
+  if (handleLikeBtn) {
+    handleHateBtn = true;
+    hateCount.textContent++;
+    hateBtn.classList.add("commentHateBtnActive");
+    hateBtn.classList.remove("commentHateBtn");
+
+    handleLikeBtn = false;
+    likeCount.textContent--;
+    likeBtn.classList.add("commentLikeBtn");
+    likeBtn.classList.remove("commentLikeBtnActive");
+  } else if (handleHateBtn) {
+    handleHateBtn = false;
+    hateCount.textContent--;
+    hateBtn.classList.add("commentHateBtn");
+    hateBtn.classList.remove("commentHateBtnActive");
+  } else if (!handleHateBtn) {
+    handleHateBtn = true;
+    hateCount.textContent++;
+    hateBtn.classList.add("commentHateBtnActive");
+    hateBtn.classList.remove("commentHateBtn");
   }
 };
 
 const activeBtn = () => {
-  likeBtn.addEventListener("click", () => changeLikeValue());
-  hateBtn.addEventListener("click", () => changeHateValue());
+  if (localStorage.getItem("USER")) {
+    likeBtn.addEventListener("click", () => changeLikeValue());
+    hateBtn.addEventListener("click", () => changeHateValue());
+  }
 };
 
 activeBtn();

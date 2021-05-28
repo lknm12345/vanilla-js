@@ -15,7 +15,6 @@ const addModalStyle = () => {
     modalContent2.classList.remove("modal2");
     modalContent2.classList.add("modal2Active");
   }
-  // else if (USERTOKEN !== "TOKEN")
 };
 
 const removeModalStyle = () => {
